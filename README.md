@@ -1,7 +1,11 @@
+# 概要
 
 * osxの環境
 * docker toolbox
 
+# grafana
+
+```
 ==================================================================
 ▼ grafana
 ---------------------------------------------
@@ -15,22 +19,22 @@ docker run \
 --restart=always \
  grafana/grafana
 ---------------------------------------------
+```
 
 
+```
 mickey390/grafana
-
-
-
-
 
 docker build -t mickey390/grafana:0.2 .
 
-
 docker run -d -p 3000:3000 --restart=always mickey390/grafana:0.3
+```
 
 
+# graphite
+
+```
 ==================================================================
-
 ▼ graphite
 ---------------------------------------------
 docker run\
@@ -43,14 +47,16 @@ docker run\
 -v /home/sitespeed/.htpasswd:/etc/nginx/.htpasswd\ 
 sitespeedio/graphite
 ---------------------------------------------
+```
 
 * basic認証 Basic Auth guest/guest
 
 
+```
 docker build -t mickey390/graphite:0.1 .
 
 docker run -d -p 8080:80 -p 2003:2003 --restart=always mickey390/graphite:0.2
-
+```
 
 http://192.168.99.100:8080/
 
